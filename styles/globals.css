@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Catppuccin - Mocha palette (selected variables) */
+  --cp-base: #1e1e2e; /* background */
+  --cp-surface: #313244; /* elevated surface */
+  --cp-text: #c6d0f5; /* primary text */
+  --cp-muted: #98a0c0; /* muted text */
+  --cp-accent: #f5bde6; /* accent/pink */
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--cp-base);
+  color: var(--cp-text);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.bg-cp-base { background-color: var(--cp-base); }
+.bg-cp-surface { background-color: var(--cp-surface); }
+.text-cp-text { color: var(--cp-text); }
+.text-cp-muted { color: var(--cp-muted); }
+.border-cp-accent { border-color: var(--cp-accent); }
+
+.rounded-lg { border-radius: 12px; }
