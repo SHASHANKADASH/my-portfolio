@@ -17,6 +17,7 @@
   --cp-peach: #fab387;
   --cp-mauve: #cba6f7;
   --cp-maroon: #eba0ac;
+  --cp-yellow: #f9e2af;
   --cp-green: #a6e3a1;
 }
 
@@ -62,6 +63,7 @@ body {
 .text-cp-peach { color: var(--cp-peach); }
 .text-cp-mauve { color: var(--cp-mauve); }
 .text-cp-maroon { color: var(--cp-maroon); }
+.text-cp-yellow { color: var(--cp-yellow); }
 .text-cp-green { color: var(--cp-green); }
 .border-cp-accent { border-color: var(--cp-accent); }
 .border-cp-overlay { border-color: var(--cp-overlay); }
@@ -82,6 +84,70 @@ body {
 .hero-button--primary:hover { background: #f9c19b; }
 .hero-button--secondary { border: 1px solid var(--cp-overlay); color: var(--cp-text); }
 .hero-button--secondary:hover { border-color: var(--cp-blue); background: rgba(137, 180, 250, 0.1); }
+
+.leetcode-heatmap {
+  display: grid;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  grid-template-rows: repeat(7, auto);
+  grid-auto-flow: column;
+  width: 100%;
+  gap: clamp(1px, 0.35vw, 3px);
+}
+
+.leetcode-months {
+  display: grid;
+  grid-template-columns: repeat(53, minmax(0, 1fr));
+  color: var(--cp-subtext);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  line-height: 1;
+  white-space: nowrap;
+  column-gap: clamp(1px, 0.35vw, 3px);
+}
+
+.leetcode-month-short { display: none; }
+
+.leetcode-day,
+.leetcode-key {
+  border-radius: 2px;
+}
+
+.leetcode-day {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.leetcode-key {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}
+
+@media (max-width: 639px) {
+  .leetcode-month-full { display: none; }
+  .leetcode-month-short { display: inline; }
+
+  .leetcode-key {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.leetcode-page-nav,
+.leetcode-header,
+.leetcode-dashboard,
+.leetcode-solved {
+  animation: intro-reveal 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.leetcode-page-nav {
+  animation-name: intro-nav-reveal;
+  animation-delay: 40ms;
+}
+
+.leetcode-header { animation-delay: 140ms; }
+.leetcode-dashboard { animation-delay: 280ms; }
+.leetcode-solved { animation-delay: 420ms; }
 
 @keyframes intro-reveal {
   from {
@@ -166,7 +232,11 @@ body {
   .intro-description,
   .intro-actions,
   .intro-capabilities,
-  .intro-capabilities span {
+  .intro-capabilities span,
+  .leetcode-page-nav,
+  .leetcode-header,
+  .leetcode-dashboard,
+  .leetcode-solved {
     animation: none;
   }
 }

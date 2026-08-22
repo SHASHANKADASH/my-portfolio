@@ -3,7 +3,10 @@ import React from 'react';
 export default function Hero() {
   return (
     <section id="about" className="intro-section min-h-screen py-6 sm:py-8">
-      <nav className="intro-nav relative flex justify-end pb-5">
+      <nav className="intro-nav relative flex items-center justify-between pb-5">
+        <a className="font-mono text-sm text-cp-yellow transition-colors hover:text-cp-text" href="/leetcode">
+          LeetCode
+        </a>
         <div className="flex flex-wrap justify-end gap-x-6 gap-y-2 text-sm text-cp-subtext sm:gap-x-9">
           <a className="transition-colors hover:text-cp-blue" href="#about">
             About
