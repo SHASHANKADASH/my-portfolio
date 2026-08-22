@@ -21,6 +21,7 @@ module.exports = {
           peach: 'var(--cp-peach)',
           mauve: 'var(--cp-mauve)',
           maroon: 'var(--cp-maroon)',
+          yellow: 'var(--cp-yellow)',
           green: 'var(--cp-green)'
         }
       }
