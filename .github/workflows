@@ -1,0 +1,17 @@
+name: Daily Cloudflare Pages Deploy
+
+on:
+  schedule:
+    # Runs at 17th minute of every hour, every day
+    - cron: '17 * * * *'
+  
+  # Allows you to trigger it manually anytime from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  trigger-hook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages Deploy Hook
+        run: |
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/235145df-cd49-44ee-9891-73a0ec89e062"
