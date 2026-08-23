@@ -2,8 +2,8 @@ name: Daily Cloudflare Pages Deploy
 
 on:
   schedule:
-    # Runs at 17th minute of every hour, every day
-    - cron: '17 * * * *'
+    # Runs at 01:00 hrs every day
+    - cron: '0 1 * * *'
   
   # Allows you to trigger it manually anytime from the Actions tab
   workflow_dispatch:
