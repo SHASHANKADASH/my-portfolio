@@ -1,6 +1,9 @@
 'use client';
 import React from 'react';
 import { Spiral as Hamburger } from 'hamburger-react';
+import Experience from './Experience';
+import About from './About';
+import Projects from './Projects';
 
 export default function Hero() {
   const [isOpen, setOpen] = React.useState(false);
@@ -59,7 +62,10 @@ export default function Hero() {
               LinkedIn <span aria-hidden>↗</span>
             </a>
           </div>
+          <About />
           <Skills />
+          <Experience />
+          <Projects />
         </div>
       </div>
     </section>
@@ -68,7 +74,7 @@ export default function Hero() {
 
 const Skills = () => {
   return <div className="intro-capabilities mt-12">
-    <p className="font-mono text-xs uppercase tracking-[0.18em] text-cp-blue">Skills</p>
+    <p className="font-mono text-xl font-bold uppercase tracking-[0.18em] text-cp-blue">Skills</p>
     <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm text-cp-text">
       <span>Java</span>
       <span className="text-cp-overlay">/</span>
