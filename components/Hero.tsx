@@ -1,60 +1,74 @@
 'use client';
-import React from 'react';
+import { useRef, useState } from 'react';
 import { Spiral as Hamburger } from 'hamburger-react';
 import Experience from './Experience';
 import About from './About';
 import Projects from './Projects';
 import Intro from './Intro';
-import Skills from './Skiils';
+import Skills from './Skills';
 
 export default function Hero() {
-  const [isOpen, setOpen] = React.useState(false);
+  const [isOpen, setOpen] = useState(false);
+  const scrollContainerRef = useRef<HTMLElement>(null);
   return (
-    <section id="about" className="intro-section min-h-screen py-6 sm:py-8">
-      <nav className="intro-nav relative flex items-center justify-between pb-5">
+    <section id="hero" className="intro-section min-h-screen">
+      <header className="intro-nav fixed top-0 left-0 w-full z-50 bg-cp-mantle pt-4 pb-4 pl-4 pr-4 flex items-center">
         {!isOpen && (
-          <a
-            className="font-mono text-sm text-cp-yellow transition-colors hover:text-cp-text"
-            href="/leetcode"
-          >
-            LeetCode
-          </a>
+          <div className="flex items-center gap-x-4">
+            <a
+              href="#hero"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="transition-colors hover:text-cp-text"
+            >
+              <img src="/icon.svg" alt="Logo" className="w-8 h-8" />
+            </a>
+            <a
+              className="font-mono text-sm text-cp-yellow transition-colors hover:text-cp-text"
+              href="/leetcode"
+            >
+              LeetCode
+            </a>
+          </div>
         )}
-        <div className="hidden md:flex">
+        <div className="hidden md:flex ml-auto">
           <Menu />
         </div>
-        <div className="md:hidden z-50">
+        <nav className="md:hidden ml-auto">
           <Hamburger toggled={isOpen} toggle={setOpen} duration={0.5} />
-        </div>
-        {isOpen && <Menu />}
-      </nav>
+          {isOpen && <Menu />}
+        </nav>
+      </header>
 
-      <div className="py-20 sm:py-28">
-        <div className="max-w-4xl">
-          <section className="h-screen snap-start">
-            <Intro />
-          </section>
-          <section className="h-screen snap-start">
-            <About />
-          </section>
-          <section className="h-screen snap-start">
-            <Skills />
-          </section>
-          <section className="h-screen snap-start">
-            <Experience />
-          </section>
-          <section className="h-screen snap-start">
-            <Projects />
-          </section>
-        </div>
-      </div>
+      <main
+        ref={scrollContainerRef}
+        className="w-full h-screen overflow-y-scroll scroll-smooth snap-y snap-proximity"
+      >
+        <section className="h-screen flex items-center snap-start">
+          <Intro />
+        </section>
+        <section className="h-screen flex items-center snap-start">
+          <About />
+        </section>
+        <section className="h-screen flex items-center snap-start">
+          <Skills />
+        </section>
+        <section className="h-screen flex items-center snap-start">
+          <Experience />
+        </section>
+        <section className="h-screen flex items-center snap-start">
+          <Projects />
+        </section>
+      </main>
     </section>
   );
 }
 
 const Menu = () => {
   return (
-    <div className="flex flex-wrap justify-end gap-x-6 gap-y-2 text-sm text-cp-subtext sm:gap-x-9">
+    <div className="flex gap-x-6 text-sm text-cp-subtext sm:gap-x-9">
       <a className="transition-colors hover:text-cp-blue" href="#about">
         About
       </a>
