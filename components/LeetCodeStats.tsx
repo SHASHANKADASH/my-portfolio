@@ -100,7 +100,6 @@ export default async function LeetCodeStats() {
 
   return (
     <section className="pb-24 pt-10 sm:pb-32 sm:pt-14" aria-labelledby="leetcode-heading">
-      <div>
         <div className="leetcode-header flex flex-wrap items-end justify-between gap-5">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-cp-peach">LeetCode</p>
@@ -209,7 +208,6 @@ export default async function LeetCodeStats() {
             <p className="mt-2 text-3xl font-medium text-cp-maroon">{formatNumber(solved.Hard)}</p>
           </div>
         </div>
-      </div>
     </section>
   );
 }

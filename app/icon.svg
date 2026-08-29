@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <text x="0" y="49" fill="#eba0ac" font-family="Courier New, monospace" font-size="48" font-weight="700">S</text>
-  <text x="28" y="49" fill="#eba0ac" font-family="Courier New, monospace" font-size="48" font-weight="700">D</text>
+  <text x="28" y="49" fill="#cdd6f4" font-family="Courier New, monospace" font-size="48" font-weight="700">D</text>
   <circle cx="61" cy="45" r="3" fill="#cdd6f4"/>
 </svg>
