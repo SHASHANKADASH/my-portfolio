@@ -6,12 +6,14 @@ import About from './About';
 import Projects from './Projects';
 import Intro from './Intro';
 import Skills from './Skills';
+import { Snackbar } from './ui/Snackbar';
 
 export default function Hero() {
   const [isOpen, setOpen] = useState(false);
   const scrollContainerRef = useRef<HTMLElement>(null);
   return (
     <section id="hero" className="intro-section min-h-screen">
+      <Snackbar message="This site is still a work in progress. 🚧" duration={4000} />
       <header className="intro-nav fixed top-0 left-0 w-full z-50 bg-cp-mantle pt-4 pb-4 pl-4 pr-4 flex items-center">
         {!isOpen && (
           <div className="flex items-center gap-x-4">
@@ -36,8 +38,8 @@ export default function Hero() {
         <div className="hidden md:flex ml-auto">
           <Menu />
         </div>
-        <nav className="md:hidden ml-auto">
-          <Hamburger toggled={isOpen} toggle={setOpen} duration={0.5} />
+        <nav className="md:hidden flex items-center ml-auto">
+          <Hamburger toggled={isOpen} toggle={setOpen} duration={0.5}/>
           {isOpen && <Menu />}
         </nav>
       </header>
@@ -46,19 +48,19 @@ export default function Hero() {
         ref={scrollContainerRef}
         className="w-full h-screen overflow-y-scroll scroll-smooth snap-y snap-proximity"
       >
-        <section className="h-screen flex items-center snap-start">
+        <section id="intro" className="h-screen flex items-center snap-start">
           <Intro />
         </section>
-        <section className="h-screen flex items-center snap-start">
+        <section id="about" className="h-screen flex items-center snap-start">
           <About />
         </section>
-        <section className="h-screen flex items-center snap-start">
+        <section id="skills" className="h-screen flex items-center snap-start">
           <Skills />
         </section>
-        <section className="h-screen flex items-center snap-start">
+        <section id="experience" className="h-screen flex items-center snap-start">
           <Experience />
         </section>
-        <section className="h-screen flex items-center snap-start">
+        <section id="projects" className="h-screen flex items-center snap-start">
           <Projects />
         </section>
       </main>

@@ -27,8 +27,8 @@ const experienceStages = [
 
 export default function Experience() {
   return (
-    <div id="experience" className="intro-experience mt-12">
-      <p className="font-mono text-xl font-bold uppercase tracking-[0.18em] text-cp-blue">Experience</p>
+    <div className="intro-experience section-margin">
+      <p className="font-mono text-xl font-bold tracking-[0.18em] text-cp-blue">Experience</p>
       <p className="font-mono uppercase tracking-[0.18em] text-cp-maroon pt-4 font-semibold">TATA CONSULTANCY SERVICES</p>
       <div className="relative mt-6 pl-2 sm:pl-3">
         <div className="space-y-8">
