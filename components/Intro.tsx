@@ -1,6 +1,6 @@
 export default function Intro() {
   return (
-    <div id="intro" className="mt-12 max-w-4xl mx-auto px-4">
+    <div className="mt-12 max-w-4xl mx-auto px-4">
       <div>
         <h1 className="intro-name text-5xl font-semibold leading-none tracking-[-0.055em] text-cp-maroon sm:text-7xl">
           Shashanka <span className="text-cp-text">Dash.</span>
