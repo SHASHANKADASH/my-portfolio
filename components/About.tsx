@@ -31,7 +31,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-cp-overlay pt-5 font-mono text-xs uppercase tracking-[0.12em]">
+      <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 pt-5 font-mono text-xs uppercase tracking-[0.12em]">
         <span className="text-cp-peach">5+ years experience</span>
         <span className="text-cp-overlay">/</span>
         <span className="text-cp-mauve">Event-driven architecture</span>

@@ -241,7 +241,6 @@ body {
 .skill-card--yellow:hover { border-color: var(--cp-yellow); }
 .skill-card--blue:hover { border-color: var(--cp-blue); }
 .skill-card--lavender:hover { border-color: var(--cp-lavender); }
-
 /* 2. Icon background changes when the PARENT card is hovered */
 .skill-card--peach:hover .icon-card { background: var(--cp-peach); }
 .skill-card--green:hover .icon-card { background: var(--cp-green); }
@@ -257,6 +256,10 @@ body {
   display: none;
 }
 
+.section {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
 .section-margin {
-  @apply mt-12 max-w-4xl mx-auto px-4;
+  @apply mx-auto max-w-4xl px-4;
 }
