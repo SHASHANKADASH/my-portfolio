@@ -27,12 +27,6 @@ export default function Hero() {
             >
               <img src="/icon.svg" alt="Logo" className="w-8 h-8" />
             </a>
-            <a
-              className="font-mono text-sm text-cp-yellow transition-colors hover:text-cp-text"
-              href="/leetcode"
-            >
-              LeetCode
-            </a>
           </div>
         )}
         <div className="hidden md:flex ml-auto">

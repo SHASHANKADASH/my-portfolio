@@ -19,6 +19,7 @@
   --cp-maroon: #eba0ac;
   --cp-yellow: #f9e2af;
   --cp-green: #a6e3a1;
+  --cp-lavender: #b4befe;
 }
 
 html, body {
@@ -58,6 +59,7 @@ body {
 .bg-cp-surface { background-color: var(--cp-surface); }
 .bg-cp-blue { background-color: var(--cp-blue); }
 .bg-cp-green { background-color: var(--cp-green); }
+.bg-cp-lavender { background-color: var(--cp-lavender); }
 .text-cp-text { color: var(--cp-text); }
 .text-cp-muted { color: var(--cp-muted); }
 .text-cp-subtext { color: var(--cp-subtext); }
@@ -83,11 +85,12 @@ body {
 }
 
 .hero-button:hover { transform: translateY(-2px); }
-.hero-button--primary { background: var(--cp-peach); color: var(--cp-crust); }
-.hero-button--primary:hover { background: #f9c19b; }
-.hero-button--secondary { border: 1px solid var(--cp-overlay); color: var(--cp-text); }
-.hero-button--secondary:hover { border-color: var(--cp-blue); background: rgba(137, 180, 250, 0.1); }
-
+.hero-button--primary { background: #ea999c; color: var(--cp-crust); }
+.hero-button--primary:hover { background: var(--cp-maroon); }
+.hero-button--secondary { background: #8caaee;  color: var(--cp-crust);}
+.hero-button--secondary:hover { border-color: var(--cp-blue); background: var(--cp-blue); }
+.leetcode-button { background: var(--cp-peach); color: var(--cp-crust); }
+.leetcode-button:hover { background: #f9c19b; }
 .leetcode-heatmap {
   display: grid;
   grid-template-columns: repeat(53, minmax(0, 1fr));
@@ -189,24 +192,12 @@ body {
   }
 }
 
-@keyframes capability-reveal {
-  from {
-    opacity: 0;
-    transform: scale(0.92);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 .intro-nav { animation: intro-nav-reveal 700ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 .intro-name { animation: intro-name-reveal 1000ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 .intro-role,
 .intro-title,
 .intro-description,
-.intro-actions,
-.intro-capabilities { animation: intro-reveal 760ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+.intro-actions { animation: intro-reveal 760ms cubic-bezier(0.16, 1, 0.3, 1) both; }
 
 .intro-nav { animation-delay: 40ms; }
 .intro-name { animation-delay: 140ms; }
@@ -214,18 +205,6 @@ body {
 .intro-title { animation-delay: 430ms; }
 .intro-description { animation-delay: 540ms; }
 .intro-actions { animation-delay: 650ms; }
-.intro-capabilities { animation-delay: 760ms; }
-
-.intro-capabilities span {
-  animation: capability-reveal 480ms cubic-bezier(0.16, 1, 0.3, 1) both;
-  animation-delay: 940ms;
-}
-
-.intro-capabilities span:nth-child(2) { animation-delay: 1010ms; }
-.intro-capabilities span:nth-child(3) { animation-delay: 1080ms; }
-.intro-capabilities span:nth-child(4) { animation-delay: 1150ms; }
-.intro-capabilities span:nth-child(5) { animation-delay: 1220ms; }
-.intro-capabilities span:nth-child(6) { animation-delay: 1290ms; }
 
 @media (prefers-reduced-motion: reduce) {
   .intro-nav,
@@ -234,8 +213,6 @@ body {
   .intro-title,
   .intro-description,
   .intro-actions,
-  .intro-capabilities,
-  .intro-capabilities span,
   .leetcode-page-nav,
   .leetcode-header,
   .leetcode-dashboard,
@@ -243,6 +220,36 @@ body {
     animation: none;
   }
 }
+
+/* Base card and icon transitions */
+.skill-card { 
+  transition: border-color 180ms ease, transform 180ms ease; 
+}
+.icon-card { 
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+/* Card lift on hover */
+.skill-card:hover { 
+  transform: translateY(-2px); 
+}
+
+/* 1. Card border-color changes on hover */
+.skill-card--peach:hover { border-color: var(--cp-peach); }
+.skill-card--green:hover { border-color: var(--cp-green); }
+.skill-card--mauve:hover { border-color: var(--cp-mauve); }
+.skill-card--yellow:hover { border-color: var(--cp-yellow); }
+.skill-card--blue:hover { border-color: var(--cp-blue); }
+.skill-card--lavender:hover { border-color: var(--cp-lavender); }
+
+/* 2. Icon background changes when the PARENT card is hovered */
+.skill-card--peach:hover .icon-card { background: var(--cp-peach); }
+.skill-card--green:hover .icon-card { background: var(--cp-green); }
+.skill-card--mauve:hover .icon-card { background: var(--cp-mauve); }
+.skill-card--yellow:hover .icon-card { background: var(--cp-yellow); }
+.skill-card--blue:hover .icon-card { background: var(--cp-blue); }
+.skill-card--lavender:hover .icon-card { background: var(--cp-lavender); }
+
 
 .rounded-lg { border-radius: 12px; }
 

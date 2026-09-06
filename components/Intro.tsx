@@ -21,9 +21,9 @@ export default function Intro() {
       <div className="intro-actions mt-9 flex flex-wrap gap-3">
         <a
           className="hero-button hero-button--primary"
-          href="mailto:shashanka.shekhardash7@gmail.com"
+          href="mailto:hello@shashanka.dev"
         >
-          Let&apos;s work together <span aria-hidden>↗</span>
+          Let&apos;s connect <span aria-hidden>↗</span>
         </a>
         <a
           className="hero-button hero-button--secondary"
@@ -32,6 +32,12 @@ export default function Intro() {
           rel="noreferrer"
         >
           LinkedIn <span aria-hidden>↗</span>
+        </a>
+        <a
+          className="hero-button leetcode-button"
+          href="/leetcode"
+        >
+          LeetCode <span aria-hidden>↗</span>
         </a>
       </div>
     </div>
