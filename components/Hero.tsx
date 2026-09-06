@@ -1,6 +1,4 @@
 'use client';
-import { useRef, useState } from 'react';
-import { Spiral as Hamburger } from 'hamburger-react';
 import Experience from './Experience';
 import About from './About';
 import Projects from './Projects';
@@ -9,56 +7,50 @@ import Skills from './Skills';
 import { Snackbar } from './ui/Snackbar';
 
 export default function Hero() {
-  const [isOpen, setOpen] = useState(false);
-  const scrollContainerRef = useRef<HTMLElement>(null);
   return (
-    <section id="hero" className="intro-section min-h-screen">
-      <Snackbar message="This site is still a work in progress. 🚧" duration={4000} />
+    <div className="min-h-screen">
+      <Snackbar message="This site is still a work in progress. 🚧" duration={2000} />
       <header className="intro-nav fixed top-0 left-0 w-full z-50 bg-cp-mantle pt-4 pb-4 pl-4 pr-4 flex items-center">
-        {!isOpen && (
-          <div className="flex items-center gap-x-4">
-            <a
-              href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
-              }}
-              className="transition-colors hover:text-cp-text"
-            >
-              <img src="/icon.svg" alt="Logo" className="w-8 h-8" />
-            </a>
-          </div>
-        )}
-        <div className="hidden md:flex ml-auto">
+        <div className="flex items-center gap-x-4">
+          <a href="#intro" className="transition-colors hover:text-cp-text">
+            <img src="/icon.svg" alt="Logo" className="w-8 h-8" />
+          </a>
+        </div>
+        <div className="md:flex ml-auto">
           <Menu />
         </div>
-        <nav className="md:hidden flex items-center ml-auto">
-          <Hamburger toggled={isOpen} toggle={setOpen} duration={0.5}/>
-          {isOpen && <Menu />}
-        </nav>
       </header>
 
-      <main
-        ref={scrollContainerRef}
-        className="w-full h-screen overflow-y-scroll scroll-smooth snap-y snap-proximity"
-      >
-        <section id="intro" className="h-screen flex items-center snap-start">
+      <main className="overflow-x-hidden">
+        <section id="intro" className="min-h-[100svh] flex items-center">
           <Intro />
         </section>
-        <section id="about" className="h-screen flex items-center snap-start">
+
+        <hr className="mx-4 border-cp-overlay sm:mx-8 lg:mx-12" />
+
+        <section id="about" className="section">
           <About />
         </section>
-        <section id="skills" className="h-screen flex items-center snap-start">
+
+        <hr className="mx-4 border-cp-overlay sm:mx-8 lg:mx-12" />
+
+        <section id="skills" className="section">
           <Skills />
         </section>
-        <section id="experience" className="h-screen flex items-center snap-start">
+
+        <hr className="mx-4 border-cp-overlay sm:mx-8 lg:mx-12" />
+
+        <section id="experience" className="section">
           <Experience />
         </section>
-        <section id="projects" className="h-screen flex items-center snap-start">
+
+        <hr className="mx-4 border-cp-overlay sm:mx-8 lg:mx-12" />
+
+        <section id="projects" className="section">
           <Projects />
         </section>
       </main>
-    </section>
+    </div>
   );
 }
 
