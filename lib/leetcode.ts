@@ -1,6 +1,6 @@
 import { unstable_cache } from 'next/cache';
 
-const username = 'user8955jU';
+const username = 'shashanka-dash';
 
 const dashboardQuery = `
   query userDashboard($username: String!, $year: Int) {
@@ -72,7 +72,7 @@ const fetchDashboard = unstable_cache(
 
     return payload.data;
   },
-  ['leetcode-dashboard-user8955ju'],
+  ['leetcode-dashboard-shashanka-dash'],
   { revalidate: 3600, tags: ['leetcode-dashboard'] },
 );
 
